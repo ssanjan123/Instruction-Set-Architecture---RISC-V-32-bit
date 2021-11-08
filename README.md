@@ -102,7 +102,8 @@ $ cgdb riscv
 $ run -r code/input/[*].input
 $ run -r -i code/input[*].input # interactive emulator mode.
 Testing
-There are two types of tests for this project: unit tests, instruction tests, and end-to-end tests. The unit tests can be found in the file test_utils.c. This suite tests the sign_extend_number and parse_instruction functions. You can run these tests using the command below.
+
+
 
 Unit tests
 $ touch test_utils.c; make test-utils
