@@ -114,11 +114,7 @@ Instruction tests
 Setup
 
 bash ./scripts/localci.sh
-# This will create the code/out folder.
-# This is required for further testing below.
-# This will also create files; make sure you overwrite them with
-# the steps below before looking at them. Otherwise the .trace
-# files in code/out/ might be stale.
+# This will create the code/out folder. This is required for further testing below. This will also create files; make sure you overwrite them with the steps below before looking at them. Otherwise the .trace files in code/out/ might be stale.
 YOU CAN ONLY READ (NOT MODIFY) THE FILES IN code/input and code/ref. HOWEVER YOU CAN UPDATE THE FILES in code/out. DO NOT GIT ADD code/out; OTHERWISE YOU WILL FAIL travis
 
 Part 1
@@ -130,10 +126,7 @@ Part 2
 
 $ ./riscv -r ./code/input/R/R.input > ./code/out/R/R.trace
 $ python3 part2_tester.py R/R
-# If there is any error, check if code/out/R/R.trace exists ?
-# The python script will report errors in particular traces points if any.
-# You can replace R with any of the other instruction types R, I, S, SB, U, J
-# Ls are also in I/ folder as they are type of I
+# If there is any error, check if code/out/R/R.trace exists ? The python script will report errors in particular traces points if any. You can replace R with any of the other instruction types R, I, S, SB, U, J Ls are also in I/ folder as they are type of I
 $ ./riscv -d ./code/input/I/L.input > ./code/out/I/L.solution
 $ diff ./code/out/I/L.solution ./code/ref/I/L.solution
 $ ./riscv -r ./code/input/I/L.input > ./code/out/I/L.trace
@@ -145,8 +138,7 @@ SPECIAL TEST CASE FOR R instructions ONLY Ri IS NOT A SPECIAL INSTRUCTION TYPE.
 
 Part 2 needs to check actual values in registers. To help we add an additional flag to help test R instructions. In this case we initialize registers (other than sp:x2 and frame pointer:x3 ) to 4. Notice the Ri. This is to indicate we are using the inited version of the CPU.
 
-# Ri.input is same as R.input. But the -v flag inits the registers to 4. If you leave out the -v then your
-# trace will not match
+# Ri.input is same as R.input. But the -v flag inits the registers to 4. If you leave out the -v then your trace will not match
 ./riscv -v -r ./code/input/Ri/Ri.input > ./code/out/Ri/Ri.trace
 $ python3 part2_tester.py Ri/Ri
 # You get points for R instructions: part 2 only if you pass the Ri part 2.
@@ -175,10 +167,7 @@ End-to-End tests
 Congratulations! You are ready for end-to-end tests
 
 $ bash ./scripts/localci.sh
-# if you see a file called SUCCESS in your repo and *.log.sucess then you passed. You can also check your *_Grade.json to see your tentative grade.
-# If you see FAILED, then inspect *.log.failed. Check the failed section in LOG.md to see what tests failed.
-# LOG.md is a markdown file. You can view it using any markdown viewer.
-# Copy paste LOG.md into this viewer e.g., https://markdownlivepreview.com/
+# if you see a file called SUCCESS in your repo and *.log.sucess then you passed. You can also check your *_Grade.json to see your tentative grade If you see FAILED, then inspect *.log.failed. Check the failed section in LOG.md to see what tests failed. LOG.md is a markdown file. You can view it using any markdown viewer. Copy paste LOG.md into this viewer e.g., https://markdownlivepreview.com/
 Part 3 Custom Instructions
 DO NOT ATTEMPT THIS WITHOUT COMPLETING PART 1 and 2
 
@@ -198,9 +187,6 @@ Congrats. You are now ready to receive your tentative grade.
 
 $ cd $REPO # $REPO refers to the top of your cloned repo.
 $ bash ./scripts/localci.sh # run from the repo folder
-# Check if SUCCESS OR FAILED was dumped by scripts
-# There will be a _Grade.json (this is your tentative grade). The file is in json format.
-# The mark component in each module indicates your score for that portion.
-# LOG.md contains the log of your runs. This might give you more information.
+# Check if SUCCESS OR FAILED was dumped by scripts. There will be a _Grade.json (this is your tentative grade). The file is in json format. The mark component in each module indicates your score for that portion. LOG.md contains the log of your runs. This might give you more information.
 This grade is only tentative. Based on additional test cases in our evaluation, you could score less points.
 
