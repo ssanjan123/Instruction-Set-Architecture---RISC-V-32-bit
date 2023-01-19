@@ -1,5 +1,6 @@
 # Instruction Set Architecture Project
-![project-img4](https://user-images.githubusercontent.com/84153519/213369013-ae4b587a-603b-4924-be73-f1cde788dc4e.png)
+
+<img src="https://user-images.githubusercontent.com/84153519/213369013-ae4b587a-603b-4924-be73-f1cde788dc4e.png" width="500" height="300">
 
 In this project, I have created a disassembler and an emulator for a subset of the RISC-V ISA. The 32-bit RISC-V emulator emulates basic load, store and mathematical calculations within memory and registers. The disassembler can take a machine level binary code and disassemble it into its assembly language.
 
